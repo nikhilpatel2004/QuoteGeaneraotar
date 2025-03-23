@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.5s ease-in-out;
+    perspective: 1000px;
+}
+
+.quote-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    width: 600px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.quote-box:hover {
+    transform: scale(1.05) rotateX(5deg);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+.quote-box h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.quote-box h2::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: #ffcc00;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.quote-box blockquote {
+    font-size: 22px;
+    min-height: 100px;
+    color: #f1f1f1;
+    font-style: italic;
+    transition: color 0.3s ease-in-out;
+}
+
+.quote-box blockquote::before, 
+.quote-box blockquote::after {
+    content: '"';
+    color: #ffcc00;
+    font-size: 26px;
+}
+
+.quote-box span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #fff;
+    text-align: right;
+    position: relative;
+}
+
+.quote-box span::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: #ffcc00;
+    position: absolute;
+    top: 50%;
+    left: -30px;
+}
+
+.quote-box div {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.quote-box button {
+    background: linear-gradient(135deg, #ffcc00, #ff5733);
+    color: #ffffff;
+    border-radius: 25px;
+    border: none;
+    width: 160px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(255, 87, 51, 0.3);
+    transform: translateZ(10px);
+}
+
+.quote-box button:hover {
+    background: linear-gradient(135deg, #ff5733, #c70039);
+    transform: scale(1.1) translateZ(15px);
+    box-shadow: 0 6px 15px rgba(255, 87, 51, 0.5);
+}
+
+button i {
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+.quote-box button:nth-child(2) {
+    background: transparent;
+    color: #ffcc00;
+    border: 2px solid #ffcc00;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+}
+
+.quote-box button:nth-child(2):hover {
+    background: #ffcc00;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 204, 0, 0.5);
+}
